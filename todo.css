@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #78abfd, #6ba2fc);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: linear-gradient(135deg, #3a3a3a, #3a3a3a);
+    color: #ffffff;
+}
+
+/* Toggle Switch */
+.switch {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 50px;
+    height: 25px;
+    background: #ddd;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s;
+}
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    margin-left: 3px;
+}
+
+input:checked + .slider {
+    transform: translateX(25px);
+    background: #040405;
+}
+
+.switch input:checked + .slider {
+    background: #499ffc;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 100%;
+    /* background: white; */
+    box-shadow: 0 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Tasks Section */
+.Tasks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Buttons */
+button {
+    height: 35px;
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    color: white;
+    opacity: 0.8;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.task {
+    min-width: 150px;
+    background-color: rgb(10, 151, 104);
+}
+.add-btn {
+    background-color: green;
+}
+
+.edit {
+    width: 70px;
+    background-color: blue;
+}
+.delete {
+    width: 85px;
+    background-color: red;
+}
+.complete {
+    width: 100px;
+    background-color: gray;
+}
+.uncheck{
+    color: white;
+    background-color: rgb(141, 141, 141);
+}
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+
+/* Button Hover */
+button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.add-task-btn, .saveBtn {
+    background-color: green;
+    min-height: 45px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.9;
+}
+
+input {
+    max-width: 250px; 
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
+.add-task-btn:hover, .saveBtn:hover {
+    opacity: 1;
+    background-color: darkgreen;
+}
+
+
+/* Add Task Section */
+.add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+input {
+    margin: 35px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px;
+    border-bottom: 1px solid rgb(141, 141, 141);
+}
+
+/* edit section */
+
+.editCon {
+    position: absolute; 
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    min-width: 300px;
+    height: auto;
+    transition: transform 0.2s ease-in-out, opacity 0.3s ease-in-out;
+    transform: scale(0.9);
+}
+
+.editCon input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+.editCon input:focus {
+    border-color: #4CAF50;
+}
+
+.editCon button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+#editClose, #close {
+    background: #ff4d4d;
+    color: white;
+    float: right;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+#editClose:hover, #close:hover {
+    background: #cc0000;
+}
+
+#editBtn {
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+}
+
+#editBtn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    table {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}

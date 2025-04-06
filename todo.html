@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLISS TO DO APP</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" href="todo.css" />
+
+  </head>
+  <body>
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+
+    <div class="container">
+      <h1>TO DO LIST</h1>
+      <div id="Tasks" class="Tasks">
+        <button class="task add-btn" id="add-btn">ADD TASK</button>
+        <div class="tasks">
+          <button class="task" id="all-btn" onclick="viewAllTasks()">
+            View All Tasks
+          </button>
+          <button
+            class="task"
+            id="completed-btn"
+            onclick="viewCompletedTasks()"
+          >
+            View Completed Tasks
+          </button>
+          <button
+            class="task"
+            id="uncompleted-btn"
+            onclick="viewUncompletedTasks()"
+          >
+            View Uncompleted Tasks
+          </button>
+        </div>
+      </div>
+
+      <div class="add" id="add" style="display: none">
+        <button id="close" onclick="closeInput()">x</button>
+        <input type="text" placeholder="Enter Task Name" id="input" value="" />
+        <button id="add-task-btn" class="add-task-btn">Add Task</button>
+      </div>
+
+      <div class="editCon" style="display: none">
+        <button id="editClose" onclick="closeInput()">x</button>
+        <input type="text" placeholder="Enter Task Name" id="editInput" />
+        <button id="editBtn" class="saveBtn">Save Task</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name of Tasks</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="display"></tbody>
+      </table>
+    </div>
+    <script src="todo.js"></script>
+  </body>
+</html>
